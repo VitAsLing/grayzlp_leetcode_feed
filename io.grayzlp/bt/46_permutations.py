@@ -24,8 +24,7 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         res = []
-        temp = []
-        self.backtracking(res, temp, nums)
+        self.backtracking(res, [], nums)
         return res
 
     def backtracking(self, res, temp_list, nums):

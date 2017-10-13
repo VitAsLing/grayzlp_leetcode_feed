@@ -1,2 +1,2 @@
 # grayzlp_leetcode_feed
-some algorithms problem
+Some algorithms problem from [leetcode](https://leetcode.com)

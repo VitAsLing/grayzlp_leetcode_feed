@@ -32,12 +32,10 @@ class Solution(object):
         return ans
 
     def backtracking(self, sets, part, start, nums):
-        if start == len(nums):
-            sets.append(list(part))
-        else:
-            self.backtracking(sets, part, start + 1, nums)
-            part.append(nums[start])
-            self.backtracking(sets, part, start + 1, nums)
+        sets.append(list(part))
+        for i in range(start, len(nums)):
+            part.append(nums[i])
+            self.backtracking(sets, part, i + 1, nums)
             part.pop()
 
 

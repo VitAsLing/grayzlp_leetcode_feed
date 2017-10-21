@@ -18,7 +18,7 @@ class TreeNode(object):
 
 class Solution(object):
     # Recursively
-    def maxDepth2(self, root):
+    def maxDepth(self, root):
         """
         :type root: TreeNode
         :rtype: int

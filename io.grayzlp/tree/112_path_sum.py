@@ -39,7 +39,6 @@ class Solution(object):
         return self.hasPathSum(root.left, sum - root.val) or self.hasPathSum(root.right, sum - root.val)
 
 
-
 # Test code
 n1 = TreeNode(1)
 n2 = TreeNode(2)

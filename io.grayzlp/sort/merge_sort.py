@@ -24,7 +24,7 @@ def merge_sort(nums):
 
 
 # Test code
-length = 1000000
+length = 100000
 arr = []
 for k in range(length):
     arr.append(random.randint(1, length * 10))

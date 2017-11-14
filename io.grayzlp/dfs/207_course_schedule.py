@@ -40,7 +40,7 @@ class Solution(object):
         :type prerequisites: List[List[int]]
         :rtype: bool
         """
-        graph = self.build_graph(numCourses, prerequisites)
+        graph = self.build_graph_reverse(numCourses, prerequisites)
         degrees = self.compute_degrees(graph)
         for i in range(0, numCourses):
             for j in range(0, numCourses):
@@ -52,6 +52,12 @@ class Solution(object):
             for neigh in graph[j]:
                 degrees[neigh] -= 1
         return True
+
+    def build_graph_reverse(self, num, prerequisites):
+        graph = [[] for i in range(0, num)]
+        for prerequisite in prerequisites:
+            graph[prerequisite[1]].append(prerequisite[0])
+        return graph
 
     def compute_degrees(self, graph):
         degrees = [0 for i in range(0, len(graph))]
@@ -78,7 +84,7 @@ class Solution(object):
     def build_graph(self, num, prerequisites):
         graph = [[] for i in range(0, num)]
         for prerequisite in prerequisites:
-            graph[prerequisite[1]].append(prerequisite[0])
+            graph[prerequisite[0]].append(prerequisite[1])
         return graph
 
     def dfs_cycle(self, node, graph, visited, on_path):

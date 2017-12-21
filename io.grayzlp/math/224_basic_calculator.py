@@ -23,7 +23,7 @@ class Solution(object):
         """
         stack = []
         result = 0
-        number = 0
+        number = 0 
         sign = 1
         for c in s:
             if c.isdigit():
